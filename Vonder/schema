@@ -1,0 +1,23 @@
+users
+{
+    username:,
+    email,
+    password:
+}
+
+rooms
+{
+    "_id": 23
+    room_name:,
+    capacity:
+}
+
+room_bookings
+{
+    "_id",
+    "room_id": 23,
+    startDate: "20230607",
+    endDate: "20230610"
+}
+
+// createdAt: new Date("2023-05-07T09:23:44.639Z"),
