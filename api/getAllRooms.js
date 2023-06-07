@@ -17,5 +17,4 @@ module.exports = async (req, res) => {
     });
   }
 };
-// { projection: { capacity: 0 } }
-//    const mappedRooms = rooms.map((el) => el.room_name);
+

@@ -5,7 +5,7 @@ module.exports = async (req, res) => {
     await global.client
       .db("meetingRoom")
       .collection("rooms")
-      .insertOne({ room_name: name, capacity: cap });
+      .insertOne({ room_name: name, capacity: cap, bookings: [] });
     return res.json({
       success: true,
       message: "Created room",

@@ -13,6 +13,8 @@ global.client = client;
 
 app.post("/regis", require("./api/regis.js"));
 app.post("/login", require("./api/login.js"));
-app.post("/createRoom", require("./api/createRoom.js"));
-app.get("/getAllRooms", require("./api/getAllRooms.js"));
-app.get("/getRoom/:id", require("./api/getRoom.js"));
+app.post("/room", require("./api/createRoom.js"));
+app.get("/room", require("./api/getAllRooms.js"));
+app.post("/room/book", require("./api/bookRoom.js"));
+app.get("/room/:id", require("./api/getRoom.js"));
+app.get("/availability", require("./api/getAvailableRooms.js"));
