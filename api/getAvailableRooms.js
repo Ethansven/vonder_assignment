@@ -3,6 +3,8 @@ const checkRoomAvailability = require("../utils/checkRoomAvailability.js");
 
 module.exports = async (req, res) => {
   const { startDateTime, endDateTime } = req.query;
+  // This is an example of what to send in body
+  //  http://localhost:5000/availability?startDateTime=2023-05-01T09:23:44.639Z&endDateTime=2023-05-02T09:00:00.639Z
   try {
     const rooms = await global.client
       .db("meetingRoom")
@@ -14,14 +16,6 @@ module.exports = async (req, res) => {
       console.log("check is", check);
       return check;
     });
-    // const freeRooms = avRooms.map((free) => {
-    //   return res.json({
-    //     _id: free._id,
-    //     room_name: free.room_name,
-    //     capacity: free.capacity,
-    //   });
-    // });
-    // return res.json(freeRooms);
 
     return res.json(avRooms);
   } catch (e) {

@@ -3,6 +3,12 @@ const checkRoomAvailability = require("../utils/checkRoomAvailability.js");
 
 module.exports = async (req, res) => {
   const { roomId, startDateTime, endDateTime } = req.body;
+  // This is an example of what to send in body
+  //{
+  //   "roomId":"6481ac86207ff0dc6b0f1eee",
+  //   "startDateTime":"2023-05-10T09:23:44.639Z",
+  //   "endDateTime":"2023-05-11T09:00:00.639Z"
+  //   }
   try {
     const room = await global.client
       .db("meetingRoom")
@@ -17,8 +23,12 @@ module.exports = async (req, res) => {
     // console.log('check is ',isRoomAv);
     if (!isRoomAv) {
       console.log("overlapped");
-      return res.status(400).json();
+      return res.status(400).json({
+        success: false,
+        message: "Room is occupied"
+      });
     }
+    console.log(room.bookings);
     await global.client
       .db("meetingRoom")
       .collection("rooms")
