@@ -14,6 +14,15 @@ module.exports = async (req, res) => {
       console.log("check is", check);
       return check;
     });
+    // const freeRooms = avRooms.map((free) => {
+    //   return res.json({
+    //     _id: free._id,
+    //     room_name: free.room_name,
+    //     capacity: free.capacity,
+    //   });
+    // });
+    // return res.json(freeRooms);
+
     return res.json(avRooms);
   } catch (e) {
     return res.status(500).json({

@@ -5,7 +5,6 @@ module.exports = async (req, res) => {
       .collection("rooms")
       .find({})
       .toArray();
-
     return res.json({
       success: true,
       data: rooms,
@@ -17,4 +16,3 @@ module.exports = async (req, res) => {
     });
   }
 };
-

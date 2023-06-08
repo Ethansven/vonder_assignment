@@ -8,11 +8,15 @@ module.exports = async (req, res) => {
       .db("meetingRoom")
       .collection("rooms")
       .findOne({ _id: new ObjectId(roomId) });
-    console.log('room is',room);
-    const isRoomAv = checkRoomAvailability({room, startDateTime, endDateTime})
-    console.log('check is ',isRoomAv);
-    if (!  isRoomAv) {
-      console.log('overlapped');
+    // console.log('room is',room);
+    const isRoomAv = checkRoomAvailability({
+      room,
+      startDateTime,
+      endDateTime,
+    });
+    // console.log('check is ',isRoomAv);
+    if (!isRoomAv) {
+      console.log("overlapped");
       return res.status(400).json();
     }
     await global.client

@@ -2,10 +2,9 @@ const { ObjectId } = require("mongodb");
 
 module.exports = ({ room, startDateTime, endDateTime }) => {
   for (let booking of room.bookings) {
-    
-    console.log("consider");
-    console.log(booking.startDateTime, booking.endDateTime);
-    console.log(startDateTime, endDateTime);
+    // console.log("consider");
+    // console.log(booking.startDateTime, booking.endDateTime);
+    // console.log(startDateTime, endDateTime);
     if (
       !(
         (startDateTime < booking.startDateTime &&
@@ -13,15 +12,9 @@ module.exports = ({ room, startDateTime, endDateTime }) => {
         startDateTime > booking.endDateTime
       )
     ) {
-      console.log("false");
+    //   console.log("false");
       return false;
     }
   }
   return true;
 };
-
-
-
-
-
-

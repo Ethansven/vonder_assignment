@@ -18,3 +18,4 @@ app.get("/room", require("./api/getAllRooms.js"));
 app.post("/room/book", require("./api/bookRoom.js"));
 app.get("/room/:id", require("./api/getRoom.js"));
 app.get("/availability", require("./api/getAvailableRooms.js"));
+app.post("/unbook",require("./api/unbook.js"))
